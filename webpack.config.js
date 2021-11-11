@@ -1,6 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin')
+const ReactRefreshWebpackPlugin = require('@pmmmwh/react-refresh-webpack-plugin');
+const { truncateSync } = require('fs');
 
 const isDevelopment = process.env.NODE_ENV !== 'production';
 
@@ -16,13 +17,15 @@ module.exports = {
     extensions: ['.js', '.jsx', '.ts', '.tsx']
   },
   devServer: {
-    contentBase: path.resolve(__dirname, 'public'),
+    static: path.resolve(__dirname, 'public'),
     hot: true,
   },
   plugins: [
-    isDevelopment && new ReactRefreshWebpackPlugin(),  
+    isDevelopment && new ReactRefreshWebpackPlugin(),
     new HtmlWebpackPlugin({
-      template: path.resolve(__dirname, 'public', 'index.html')
+      filename: 'index.html',
+      inject: true,
+      template: path.resolve(__dirname, 'public', 'index.html'),
     })
   ].filter(Boolean),
   module: {
@@ -44,6 +47,17 @@ module.exports = {
         exclude: /node_modules/,
         use: ['style-loader', 'css-loader', 'sass-loader']
       },
+      {
+        test: /\.svg$/,
+        use: [
+          {
+            loader: 'svg-url-loader',
+            options: {
+              limit: 10000,
+            },
+          },
+        ],
+      }
     ]
   }
 }
