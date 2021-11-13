@@ -11,7 +11,7 @@
 </p>
 
 <p align="center">
-  <img alt="Login" src=".github/to.do.gif" width="100%">
+  <img alt="app" src=".github/to.do.gif" width="100%">
 </p>
 
 ## ✨ Technologies
