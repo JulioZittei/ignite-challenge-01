@@ -20,6 +20,7 @@ This project was developed with the following technologies:
 
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
+- [Sass](https://sass-lang.com/)
 
 ## 🚀 How to run
 
@@ -30,6 +31,10 @@ This project was developed with the following technologies:
 The application can be accessed at [`localhost:8080`](http://localhost:8080)
 
 You can access the live web application [`clicking here`](https://ignite-challenge-01.netlify.app/).
+
+<p align="center">
+  <img alt="app" src=".github/qr-code.png" width="20%">
+</p>
 
 ## 📄 License
 
