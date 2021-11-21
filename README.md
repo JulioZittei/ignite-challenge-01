@@ -21,6 +21,7 @@ This project was developed with the following technologies:
 - [React](https://pt-br.reactjs.org/)
 - [TypeScript](https://www.typescriptlang.org/)
 - [Sass](https://sass-lang.com/)
+- [Axios](https://axios-http.com/docs/intro)
 
 ## 🚀 How to run
 
